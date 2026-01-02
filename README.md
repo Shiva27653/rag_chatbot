@@ -33,9 +33,6 @@ Powered by **Groq's Llama-3** and **LangChain**, it allows users to paste a docu
 
 ## ⚙️ Installation & Local Setup
 
-If you want to run this locally, follow these steps:
 
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/Shiva27653/rag_chatbot.git](https://github.com/Shiva27653/rag_chatbot.git)
+git clone https://github.com/Shiva27653/rag_chatbot.git
 cd rag_chatbot
