@@ -43,15 +43,13 @@ def get_google_doc_text(url):
         doc_id = match.group(1)
         export_url = f"https://docs.google.com/document/d/{doc_id}/export?format=txt"
         response = requests.get(export_url)
-        
-        if response.status_code == 403:
-            return None, "This document is Private. Share it with 'Anyone with the link'."
+        if response.status_code in [401, 403]:
+            return None, " This document is Private. Please click 'Share' > 'Anyone with the link' in Google Docs."
         
         response.raise_for_status()
         return response.text, None
     except Exception as e:
         return None, f"Error: {str(e)}"
-
 def process_document(url):
     with st.spinner("Ingesting document..."):
         raw_text, error = get_google_doc_text(url)
@@ -149,4 +147,5 @@ if prompt := st.chat_input("Ask about your document..."):
                 
         st.session_state.messages.append({"role": "assistant", "content": response_text})
     else:
+
         st.error("Please load a document first!")
