@@ -38,7 +38,7 @@ If you want to run this application locally, follow these steps:
 ### 1. Clone the Repository
 Open your terminal and run:
 ```bash
-git clone [https://github.com/Shiva27653/rag_chatbot.git](https://github.com/Shiva27653/rag_chatbot.git)
+git clone https://github.com/Shiva27653/rag_chatbot.git
 cd rag_chatbot
 
 ```
